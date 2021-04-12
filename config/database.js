@@ -13,4 +13,4 @@ const db = new Sequelize("codegig", "postgres", "girl4yeah", {
   // http://docs.sequelizejs.com/manual/tutorial/querying.html#operators
 });
 
-module.exports = { db };
+module.exports = db;
