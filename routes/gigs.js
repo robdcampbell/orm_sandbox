@@ -16,12 +16,12 @@ router.get("/", (req, res) =>
 // Add a gig
 router.get("/add", (req, res) => {
   const data = {
-    title: "Looking for a React Developer",
-    technologies: "react,javascript,html,css",
-    budget: "$3000",
+    title: "Simple Wordpress website",
+    technologies: "wordpress,php,html,css",
+    budget: "$1000",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum ullam vitae praesentium cupiditate nobis, debitis ipsa commodi exercitationem magni itaque, optio id quasi est aperiam voluptas quos quidem consectetur labore esse aliquam, sed laboriosam. Odio recusandae in tenetur atque doloremque!",
-    contact_email: "user1@gmail.com",
+    contact_email: "user2@gmail.com",
   };
   let { title, technologies, budget, description, contact_email } = data;
 
