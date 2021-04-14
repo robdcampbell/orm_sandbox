@@ -16,8 +16,8 @@ router.get("/", (req, res) =>
 // Add a gig
 router.get("/add", (req, res) => {
   const data = {
-    title: "Simple Wordpress website",
-    technologies: "wordpress,php,html,css",
+    title: "Backend Dev",
+    technologies: "Node,react,html,css,graphql",
     budget: "$1000",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum ullam vitae praesentium cupiditate nobis, debitis ipsa commodi exercitationem magni itaque, optio id quasi est aperiam voluptas quos quidem consectetur labore esse aliquam, sed laboriosam. Odio recusandae in tenetur atque doloremque!",
