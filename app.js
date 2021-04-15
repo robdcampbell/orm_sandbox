@@ -10,6 +10,9 @@ const app = express();
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
+// Parse data
+app.use(express.json());
+
 // Set Static Assets
 app.use(express.static(path.join(__dirname, "public")));
 
