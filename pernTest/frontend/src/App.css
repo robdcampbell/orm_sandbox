@@ -66,6 +66,7 @@ SANDBOX PAGE
 
 .home__sandbox {
   background-color: lightblue;
+  height: 100vh;
 }
 
 /* counter  ================ */
@@ -88,3 +89,27 @@ SANDBOX PAGE
 }
 
 /* API related testing  ================   */
+.data__section > h3 {
+  /* display: flex;
+  flex-wrap: wrap; */
+  border-bottom: #292929 solid 1px;
+  padding: 1rem;
+}
+.user__card {
+  background-color: #fff;
+  border: #262626 solid 1px;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 1rem;
+  width: 50%;
+}
+.user__card:hover {
+  cursor: pointer;
+}
+.local__data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}

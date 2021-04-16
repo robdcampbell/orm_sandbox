@@ -2,12 +2,11 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 const LocalData = () => {
-  const [message, setMessage] = useState({});
+  const [users, setUsers] = useState([]);
 
   const fetchedData = async () => {
-    console.log(message);
-    const { data } = await axios.get("/api");
-    setMessage(data);
+    const { data } = await axios.get("/users");
+    setUsers(data);
     return data;
   };
 
@@ -16,10 +15,15 @@ const LocalData = () => {
   }, []);
 
   return (
-    <section>
-      <h3>This is where the data goes</h3>
-      <h4>Name: {message.name}</h4>
-      <p>Message: {message.message}</p>
+    <section className="local__data">
+      {users.map((user) => (
+        <section className="user__card">
+          <h4>
+            Name: {user.name}, ID: {user.id}
+          </h4>
+          <p>Message: {user.contact_email}</p>
+        </section>
+      ))}
     </section>
   );
 };

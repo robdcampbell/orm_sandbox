@@ -24,7 +24,7 @@ const Home = () => {
         <button onClick={(e) => countAction("inc")}>+</button>
       </section> */}
 
-      <section>
+      <section className="data__section">
         <h3>GetData:</h3>
         <LocalData />
       </section>
