@@ -16,12 +16,13 @@ const Home = () => {
   return (
     <main className="home__sandbox">
       <h2>Welcome home.</h2>
-      <section className="counter">
+
+      {/* <section className="counter">
         <h3>Count</h3>
         <button onClick={(e) => countAction("dec")}>-</button>
         <p>{count}</p>
         <button onClick={(e) => countAction("inc")}>+</button>
-      </section>
+      </section> */}
 
       <section>
         <h3>GetData:</h3>
