@@ -17,7 +17,6 @@ router.get("/", (req, res) =>
 //   res.send("users");
 // });
 
-// NEW add
 // Add a User
 router.get("/add", (req, res) => {
   const data = {
@@ -34,20 +33,41 @@ router.get("/add", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-// Add a User
-// router.get("/add", (req, res) => {
-//   const data = {
-//     name: "John Doe",
-//     contact_email: "john@gmail.com",
-//   };
-//   let { name, contact_email } = data;
+// get Specific User test
+router.get("/wayne", (req, res) => {
+  res.send("ok ok ok ok ok");
 
-//   User.create({
-//     name,
-//     contact_email,
-//   })
-//     .then((user) => res.redirect("/"))
-//     .catch((err) => console.log(err));
-// });
+  User.destroy({
+    where: {
+      id: 7,
+    },
+  })
+    .then(() => console.log("deleted"))
+    .catch((err) => console.log(err));
+
+  // User.create({
+  //   name,
+  //   contact_email,
+  // })
+  //   .then((user) => res.redirect("/users"))
+  //   .catch((err) => console.log(err));
+});
+
+// Delete User
+router.get("/delete", (req, res) => {
+  const data = {
+    id: 6,
+    name: "Wayne Gretszy",
+    contact_email: "number99@gmail.com",
+  };
+  let { name, contact_email } = data;
+
+  User.create({
+    name,
+    contact_email,
+  })
+    .then((user) => res.redirect("/users"))
+    .catch((err) => console.log(err));
+});
 
 module.exports = router;
