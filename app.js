@@ -2,6 +2,7 @@ const express = require("express");
 const exphbs = require("express-handlebars");
 const path = require("path");
 const db = require("./config/database");
+// const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 5000;
 
 const app = express();
@@ -12,6 +13,7 @@ app.set("view engine", "handlebars");
 
 // Parse data
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 // Set Static Assets
 app.use(express.static(path.join(__dirname, "public")));

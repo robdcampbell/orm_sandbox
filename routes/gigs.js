@@ -23,6 +23,8 @@ router.post("/add", (req, res) => {
   let { title, technologies, budget, description, contact_email } = req.body;
   let errors = [];
 
+  console.log(req.body);
+
   // validate fields
   if (!title) {
     errors.push({ text: "Please add a title" });
@@ -39,9 +41,9 @@ router.post("/add", (req, res) => {
 
   // Check for errors
   if (errors.length > 0) {
-    console.log(title);
-    console.log(description);
-    console.log(budget);
+    console.log("error!");
+    console.log(req.body);
+
     res.render("add", {
       errors,
       title,
