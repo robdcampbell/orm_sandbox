@@ -23,7 +23,7 @@ router.post("/add", (req, res) => {
   let { title, technologies, budget, description, contact_email } = req.body;
   let errors = [];
 
-  console.log(req.body);
+  // console.log(req.body);
 
   // validate fields
   if (!title) {
@@ -42,7 +42,6 @@ router.post("/add", (req, res) => {
   // Check for errors
   if (errors.length > 0) {
     console.log("error!");
-    console.log(req.body);
 
     res.render("add", {
       errors,
@@ -53,6 +52,14 @@ router.post("/add", (req, res) => {
       contact_email,
     });
   } else {
+    if (!budget) {
+      budget = "Unknown";
+    } else {
+      budget = `$${budget}`;
+    }
+
+    technologies = technologies.toLowerCase().replace(/, /g, ",");
+
     // Insert into table
     Gig.create({
       title,
