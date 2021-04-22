@@ -12,13 +12,27 @@ router.get("/", (req, res) =>
     .catch((err) => console.log(err))
 );
 
-// Display Add User Form
-// router.get("/users", (req, res) => {
-//   res.send("users");
-// });
-
 // Add a User
-router.get("/add", (req, res) => {
+router.post("/", (req, res) => {
+  const data = {
+    name: req.body.name,
+    contact_email: req.body.contact_email,
+  };
+  let { name, contact_email } = data;
+
+  console.log(name, contact_email);
+
+  User.create({
+    name,
+    contact_email,
+  })
+    .then((user) => res.redirect("/users"))
+    .catch((err) => console.log(err));
+});
+
+// TEST****
+
+/*router.get("/add", (req, res) => {
   const data = {
     name: "Wayne Gretszy",
     contact_email: "number99@gmail.com",
@@ -32,42 +46,37 @@ router.get("/add", (req, res) => {
     .then((user) => res.redirect("/users"))
     .catch((err) => console.log(err));
 });
+*/
 
-// get Specific User test
-router.get("/wayne", (req, res) => {
-  res.send("ok ok ok ok ok");
-
+// TEST**** DELETE Specific User test
+router.delete("/:id", (req, res) => {
+  //console.table(`****PTERODACTYL ${req.params.id}`);
+  const id = req.params.id;
+  console.log(id);
   User.destroy({
     where: {
-      id: 7,
+      id,
     },
   })
     .then(() => console.log("deleted"))
     .catch((err) => console.log(err));
-
-  // User.create({
-  //   name,
-  //   contact_email,
-  // })
-  //   .then((user) => res.redirect("/users"))
-  //   .catch((err) => console.log(err));
 });
 
-// Delete User
-router.get("/delete", (req, res) => {
-  const data = {
-    id: 6,
-    name: "Wayne Gretszy",
-    contact_email: "number99@gmail.com",
-  };
-  let { name, contact_email } = data;
+// Delete User Test
+// router.get("/delete", (req, res) => {
+//   const data = {
+//     id: 6,
+//     name: "Wayne Gretszy",
+//     contact_email: "number99@gmail.com",
+//   };
+//   let { name, contact_email } = data;
 
-  User.create({
-    name,
-    contact_email,
-  })
-    .then((user) => res.redirect("/users"))
-    .catch((err) => console.log(err));
-});
+//   User.create({
+//     name,
+//     contact_email,
+//   })
+//     .then((user) => res.redirect("/users"))
+//     .catch((err) => console.log(err));
+// });
 
 module.exports = router;

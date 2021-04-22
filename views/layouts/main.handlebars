@@ -37,6 +37,16 @@
     <div class="container">
       {{{body}}}
     </div>
+    <script>
+      
+    const deleteBtn = document.getElementById('test');
     
+    deleteBtn.addEventListener('click', clickDelete)
+
+    function clickDelete(e){
+      e.preventDefault();
+      console.log('clicked')
+    }
+    </script>
   </body>
 </html>

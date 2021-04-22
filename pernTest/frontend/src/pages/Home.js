@@ -1,33 +1,20 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import LocalData from "../components/LocalData";
+// import axios from "axios";
+import UserList from "../components/UserList";
+// import { Link } from "react-router-dom";
+import AddUser from "../components/AddUser";
 
-const Home = () => {
-  const [count, setCount] = useState(0);
-
-  const countAction = (action) => {
-    action === "inc"
-      ? setCount((prev) => (prev += 1))
-      : setCount((prev) => (prev -= 1));
-  };
-
-  useEffect(() => {}, []);
+const Home = (params) => {
+  const [userAction, setUserAction] = useState(0);
 
   return (
     <main className="home__sandbox">
       <h2>Welcome home.</h2>
-
-      {/* <section className="counter">
-        <h3>Count</h3>
-        <button onClick={(e) => countAction("dec")}>-</button>
-        <p>{count}</p>
-        <button onClick={(e) => countAction("inc")}>+</button>
-      </section> */}
-
       <section className="data__section">
         <h3>GetData:</h3>
-        <LocalData />
+        <UserList userAction={userAction} setUserAction={setUserAction} />
       </section>
+      <AddUser setUserAction={setUserAction} />
     </main>
   );
 };
