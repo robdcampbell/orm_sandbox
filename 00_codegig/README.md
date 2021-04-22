@@ -1,3 +1,0 @@
-# ORM Sandbox
-
-## Sequelize, Mongoose, etc...
