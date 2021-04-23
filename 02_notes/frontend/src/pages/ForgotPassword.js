@@ -39,12 +39,6 @@ const ForgotPassword = () => {
 
         <form className="login__form" onSubmit={handleSubmit}>
           <input type="email" required ref={emailRef} placeholder="Email" />
-          <input
-            type="password"
-            required
-            ref={passwordRef}
-            placeholder="Password"
-          />
           <button disabled={loading} type="submit" className="">
             Reset by email
           </button>
@@ -55,7 +49,7 @@ const ForgotPassword = () => {
         </div>
       </section>
 
-      <div className="">
+      <div className="subheading">
         Need an account? <Link to="/signup">Sign Up</Link>
       </div>
     </main>

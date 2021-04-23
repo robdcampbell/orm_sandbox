@@ -22,7 +22,7 @@ const Login = () => {
 
       // LOGIN CONTROLLER
       //await login(emailRef.current.value, passwordRef.current.value);
-      history.push("/");
+      history.push("/test");
     } catch (e) {
       setError("Failed to sign in");
     }

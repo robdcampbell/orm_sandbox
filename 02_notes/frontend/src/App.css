@@ -59,8 +59,9 @@ NOTES/Ideas : Grays
   /* Grays */
   --gray-light: #eeeeee;
   --gray-mid-light: #c0c0c0;
-  --gray-mid: #353535;
+  --gray-mid: #616161;
   --gray-dark: #262626;
+  --gray-darkest: #1b1b1b;
 
   /* Whites */
   --white: #fff;
@@ -98,6 +99,14 @@ button:hover {
   cursor: pointer;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--gray-darkest);
+}
 /* Card */
 .card {
   border: var(--gray-mid) solid var(--border);
@@ -135,6 +144,8 @@ Login / Register Pages
 
 .modal__card > h2 {
   margin-bottom: var(--space-large);
+  font-weight: 200;
+  font-size: 2rem;
 }
 
 .login__form {
@@ -155,4 +166,8 @@ Login / Register Pages
   background-color: var(--gray-mid-light);
   color: var(--white);
   margin-bottom: var(--space-large);
+}
+
+.subheading {
+  color: var(--gray-mid);
 }
