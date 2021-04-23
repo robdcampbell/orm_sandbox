@@ -5,10 +5,12 @@ import Error from "./pages/Error";
 import SignUp from "./pages/SignUp";
 import ForgotPassword from "./pages/ForgotPassword";
 import Test from "./pages/Test";
+import Nav from "./components/Nav";
 
 function App() {
   return (
     <Router className="App">
+      <Nav />
       <Switch>
         <Route exact path="/" component={Login} />
         <Route exact path="/signup" component={SignUp} />

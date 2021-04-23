@@ -8,6 +8,7 @@ CSS TABLE OF CONTENTS
   - Reset
   - Global variables 
   - Global Styles
+  - Nav
   - Login / Register Pages 
 */
 
@@ -27,7 +28,6 @@ input,
 select,
 textarea {
   color: inherit;
-  background: none;
   text-decoration: none;
   font-family: inherit;
   font-size: 100%;
@@ -71,6 +71,7 @@ NOTES/Ideas : Grays
   --white-4: #898580;
 
   /* Spacing */
+  --space-small: 0.25rem;
   --space-main: 0.5rem;
   --space-mid: 1rem;
   --space-large: 2rem;
@@ -115,6 +116,25 @@ h6 {
 
 /*
 =====================================
+Nav
+=====================================
+*/
+.topNav {
+  padding: var(--space-mid);
+  /* border-bottom: var(--gray-mid-light) solid 1px; */
+}
+.topNav > ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.register-items a:nth-child(2) {
+  margin-left: var(--space-large);
+}
+
+/*
+=====================================
 Login / Register Pages 
 =====================================
 */
@@ -130,14 +150,15 @@ Login / Register Pages
   color: var(--gray-dark);
 }
 .modal__card {
-  min-width: 300px;
+  min-width: 350px;
   background-color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   border-radius: var(--border-radius);
-  padding: var(--space-large);
+  padding: var(--space-large) var(--space-mid);
+
   margin-bottom: 0.5rem;
   box-shadow: 0px 10px 10px 10px var(--gray-light);
 }
@@ -149,6 +170,7 @@ Login / Register Pages
 }
 
 .login__form {
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -163,7 +185,7 @@ Login / Register Pages
   padding: var(--space-main);
 }
 .login__form > button {
-  background-color: var(--gray-mid-light);
+  background-color: var(--gray-mid);
   color: var(--white);
   margin-bottom: var(--space-large);
 }
