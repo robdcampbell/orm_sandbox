@@ -120,7 +120,7 @@ Nav
 =====================================
 */
 .topNav {
-  padding: var(--space-mid);
+  padding: var(--space-mid) var(--space-main);
   /* border-bottom: var(--gray-mid-light) solid 1px; */
 }
 .topNav > ul {
@@ -192,4 +192,47 @@ Login / Register Pages
 
 .subheading {
   color: var(--gray-mid);
+}
+/*
+=====================================
+Home/Profile Page
+=====================================
+*/
+
+.profile__page {
+  padding: var(--space-main);
+}
+.profile__page > h1 {
+  padding-bottom: var(--space-main);
+  margin-bottom: var(--space-mid);
+  border-bottom: var(--white-2) solid 1px;
+}
+.modal__container {
+  position: relative;
+}
+/*
+=====================================
+Add Note Modal
+=====================================
+*/
+.add__modal {
+  border: #1b1b1b solid 1px;
+  background-color: white;
+  border-radius: var(--border-radius);
+  position: absolute;
+  width: 100%;
+  top: 3px;
+  right: 0;
+  left: 0;
+  padding: 3rem;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+}
+.close__modal {
+  position: absolute;
+  padding: var(--space-small);
+  top: 3px;
+  right: 3px;
+  width: fit-content;
 }

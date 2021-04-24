@@ -5,9 +5,7 @@ import { Link, useHistory } from "react-router-dom";
 
 const ForgotPassword = () => {
   const emailRef = useRef();
-  const passwordRef = useRef();
-  //get signup function from created AuthContext
-  // const { login, currentUser } = useAuth();
+
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const history = useHistory();
@@ -18,13 +16,10 @@ const ForgotPassword = () => {
     try {
       setError("");
       setLoading(true);
-      // signup function
 
-      // LOGIN CONTROLLER
-      //await login(emailRef.current.value, passwordRef.current.value);
       history.push("/");
     } catch (e) {
-      setError("Failed to sign in");
+      setError("Failed to reset password");
     }
     setLoading(false);
   };

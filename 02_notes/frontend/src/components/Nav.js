@@ -9,8 +9,8 @@ const Nav = () => {
         </li>
 
         <li className="register-items">
-          <a href="#">Login</a>
-          <a href="#">Sign Up</a>
+          <a href="/">Login</a>
+          <a href="/">Sign Up</a>
         </li>
       </ul>
     </nav>
