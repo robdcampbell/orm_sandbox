@@ -7,3 +7,18 @@ const db = new Sequelize("notetest", "postgres", "girl4yeah", {
 });
 
 module.exports = db;
+
+// Notes:
+
+/*
+pool:
+pool: {
+    max: 5,
+    min: 0,
+    acquire: 30000,
+    idle: 10000,
+  },
+  // http://docs.sequelizejs.com/manual/tutorial/querying.html#operators
+});
+
+*/

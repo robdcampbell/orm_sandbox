@@ -6,6 +6,7 @@ const db = require("./config/database");
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// Test Connection
 (async () => {
   try {
     await db.authenticate();
