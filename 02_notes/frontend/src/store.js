@@ -17,4 +17,5 @@ const store = createStore(
   composeWithDevTools(applyMiddleware(...middleware))
 );
 
+export default store;
 // LOOK AT PRODUCT LIAST REDUCER
