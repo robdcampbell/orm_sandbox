@@ -7,6 +7,7 @@ import ForgotPassword from "./pages/ForgotPassword";
 import Test from "./pages/Test";
 import Nav from "./components/Nav";
 import Home from "./pages/Home";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Nav />
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route path="/profile" component={Profile} />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={SignUp} />
         <Route path="/forgot-password" component={ForgotPassword} />
