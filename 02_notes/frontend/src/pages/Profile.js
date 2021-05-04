@@ -13,6 +13,8 @@ const Profile = () => {
 
   const fetchedNotes = async () => {
     const { data } = await axios.get("/profile");
+    const allInfo = await axios.get("/profile");
+    console.log(allInfo);
     setNoteList(data);
     return data;
   };
