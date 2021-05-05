@@ -64,7 +64,7 @@ const Profile = () => {
               {note.title} : {note.id}
             </h4>
             <p>{note.description}</p>
-            <button onClick={(e) => deleteNote(e)}>X</button>
+            <button onClick={(e) => deleteNote(e)}>delete note</button>
           </div>
         ))}
       </section>
