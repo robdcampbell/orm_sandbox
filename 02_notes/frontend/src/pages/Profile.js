@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { listNotes } from "../actions/noteActions";
 //testing
@@ -9,45 +9,54 @@ const Profile = () => {
   //testing
   const [noteList, setNoteList] = useState([]);
 
+  const noteTitle = useRef();
+  const noteDescription = useRef();
+
   //const noteList = useSelector((state) => state.noteList);
 
   // 1) FETCH NOTES FROM DB
   const fetchedNotes = async () => {
     const { data } = await axios.get("/profile");
-    const allInfo = await axios.get("/profile");
-    console.log(allInfo);
     setNoteList(data);
     return data;
   };
 
   // 2) ADD NOTE
   // TEST
-  const addNoteTest = (e) => {
+  const addNoteTest = async (e) => {
     e.preventDefault();
+
     const dateID = Number(Date.now());
-    axios.post("/profile", {
+    await axios.post("/profile", {
       id: dateID,
-      title: "Test Filler Note",
-      description:
-        " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione tenetur cupiditate totam eum commodi itaque aliquid neque consequuntur numquam eaque dolorem deserunt saepe quis, repellat laboriosam voluptate sequi aspernatur maiores! Quia, officiis voluptates ut qui odit inventore modi vitae sed totam illum velit tenetur sequi officia sint labore blanditiis sit. ",
+      title: noteTitle.current.value,
+      description: noteDescription.current.value,
     });
-    console.log(e.target.textContent);
+    noteTitle.current.value = "";
+    noteDescription.current.value = "";
+    // await fetchedNotes();
   };
   // 3) DELETE NOTE FROM DB USING ID
   const deleteNote = (e) => {
-    console.log(e.target.parentElement.id);
     const noteId = e.target.parentElement.id;
     axios.delete(`/profile/${noteId}`);
+    // fetchedNotes();
   };
 
   useEffect(() => {
     fetchedNotes();
-  }, []);
+  }, [deleteNote, addNoteTest]);
 
   return (
     <main className="profile__page">
       <h1>Current Notes</h1>
-      <button onClick={(e) => addNoteTest(e)}>Add Filler Note</button>
+      {/* <button onClick={(e) => addNoteTest(e)}>Add Filler Note</button> */}
+      <form action="">
+        <input ref={noteTitle} type="text" placeholder="Title" />
+        <input ref={noteDescription} type="text" placeholder="Description" />
+        <button onClick={(e) => addNoteTest(e)}>Add Note</button>
+      </form>
+
       <section className="note__list">
         {noteList.map((note) => (
           <div key={note.id} className="note__card" id={note.id}>
