@@ -7,10 +7,10 @@ const Nav = () => {
         <li>
           <a href="/">Notes.</a>
         </li>
-
+        <a href="/profile">Profile</a>
         <li className="register-items">
-          <a href="/">Login</a>
-          <a href="/">Sign Up</a>
+          <a href="/login">Login</a>
+          <a href="/signup">Sign Up</a>
         </li>
       </ul>
     </nav>

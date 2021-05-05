@@ -210,6 +210,23 @@ Home/Profile Page
 .modal__container {
   position: relative;
 }
+
+/*
+=====================================
+Notes List
+=====================================
+*/
+
+.note__list {
+  /* width: 95%; */
+  margin: 1rem auto;
+}
+.note__card {
+  margin-bottom: var(--space-large);
+  padding-bottom: var(--space-main);
+  border-bottom: var(--white-2) solid 1px;
+}
+
 /*
 =====================================
 Add Note Modal
