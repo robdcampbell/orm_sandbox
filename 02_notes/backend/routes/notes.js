@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../config/database");
+// const db = require("../config/database2");
 const Note = require("../models/Notes");
 
 router.get("/", (req, res) => {
@@ -13,15 +14,17 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
   const data = {
+    id: req.body.id,
     title: req.body.title,
     description: req.body.description,
   };
 
-  let { title, description } = data;
+  let { id, title, description } = data;
 
   console.log(data);
 
   Note.create({
+    id,
     title,
     description,
   })

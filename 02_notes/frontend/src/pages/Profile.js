@@ -24,7 +24,9 @@ const Profile = () => {
   // TEST
   const addNoteTest = (e) => {
     e.preventDefault();
+    const dateID = Number(Date.now());
     axios.post("/profile", {
+      id: dateID,
       title: "Test Filler Note",
       description:
         " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione tenetur cupiditate totam eum commodi itaque aliquid neque consequuntur numquam eaque dolorem deserunt saepe quis, repellat laboriosam voluptate sequi aspernatur maiores! Quia, officiis voluptates ut qui odit inventore modi vitae sed totam illum velit tenetur sequi officia sint labore blanditiis sit. ",
