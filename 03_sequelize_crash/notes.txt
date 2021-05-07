@@ -25,3 +25,9 @@
       - migrations
       - models 
       - seeders 
+
+4) Using CLI to create a model: 
+  - example with a user:
+    ***  - sequelize model:generate --name User --attributes name:string,email:string,role:string
+
+5) 
