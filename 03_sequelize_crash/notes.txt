@@ -1,0 +1,27 @@
+
+
+// NOTES ON THIS Sequelize V6 install and setup:
+
+  " *** " denotes command to run from terminal.
+
+
+1) In project directory: 
+  *** -  npm install sequelize pg pg-hstore
+    
+    : pg creates the database connection to postgreSQL from Node
+    : pg-hstore is a node package for serializing and deserializign data to hstore format
+
+2) getting started: https://sequelize.org/master/
+  - You can manually set everything up in a config
+  - You can also have seuelize initialize everything using the sequelize CLI (doing this one now):
+    
+  *** - npm install -g sequelize-cli
+
+3) Once installed (***) initialize projects sequelize:
+  *** - sequelize init
+
+    This will create several folders: 
+      - config
+      - migrations
+      - models 
+      - seeders 
