@@ -4,6 +4,7 @@ const { Sequelize } = require("sequelize");
 const db = new Sequelize("notetest", "postgres", "girl4yeah", {
   host: "localhost",
   dialect: "postgres",
+  logging: false,
 });
 
 module.exports = db;

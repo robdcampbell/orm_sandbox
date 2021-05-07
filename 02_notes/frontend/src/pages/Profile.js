@@ -8,6 +8,7 @@ const Profile = () => {
   const dispatch = useDispatch();
   //testing
   const [noteList, setNoteList] = useState([]);
+  const [noteCount, setNoteCount] = useState(0);
 
   const noteTitle = useRef();
   const noteDescription = useRef();
@@ -32,20 +33,21 @@ const Profile = () => {
       title: noteTitle.current.value,
       description: noteDescription.current.value,
     });
+    console.log(noteTitle.current.value);
     noteTitle.current.value = "";
     noteDescription.current.value = "";
-    // await fetchedNotes();
+    await fetchedNotes();
   };
   // 3) DELETE NOTE FROM DB USING ID
   const deleteNote = (e) => {
     const noteId = e.target.parentElement.id;
     axios.delete(`/profile/${noteId}`);
-    // fetchedNotes();
+    fetchedNotes();
   };
 
   useEffect(() => {
     fetchedNotes();
-  }, [deleteNote, addNoteTest]);
+  }, [noteCount]);
 
   return (
     <main className="profile__page">
