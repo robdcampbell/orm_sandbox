@@ -4,6 +4,8 @@ import AddNote from "../components/AddNoteModal";
 const Home = () => {
   const [showModal, setShowModal] = useState(false);
 
+  // Add redirect to login if no user logged in ***
+
   return (
     <main className="profile__page">
       <h1>Notes.</h1>
