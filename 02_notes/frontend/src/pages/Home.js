@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AddNote from "../components/AddNoteModal";
 
-const Home = () => {
+const Home = ({ history }) => {
   const [showModal, setShowModal] = useState(false);
-
+  const [loggedIn, setLoggedIn] = useState(false);
   // Add redirect to login if no user logged in ***
+
+  useEffect(() => {
+    !loggedIn && history.push("/login");
+  }, []);
 
   return (
     <main className="profile__page">
